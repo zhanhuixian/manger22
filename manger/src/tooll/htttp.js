@@ -5,3 +5,11 @@ const http = axios.create({
 });
 
 export default http
+
+export const menus=()=>{
+    return http.get("menus",{
+        headers:{
+            Authorization:window.sessionStorage.getItem("token")
+        }
+    })
+}
