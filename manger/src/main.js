@@ -11,12 +11,30 @@ Vue.use(ElementUI);
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import login from "./components/login.vue"
-const routes=[{
-  path:"/login",component:login
-}]
+import index from "./components/index.vue"
+const routes=[
+  {path:"/login",component:login},
+  {path: '/', redirect: '/login' },
+  {path:"/index",component:index}
+]
 const router=new VueRouter({
   routes
 })
+
+router.beforeEach((to, from, next) => {
+ if(to.path.includes("index")) {
+   if(window.sessionStorage.getItem("token")){
+     next()
+   }else{
+    Vue.prototype.$message.error("请重新登录")
+    router.push("/login")
+ }
+   
+ }else{
+   next()
+ }
+})
+
 
 new Vue({
   router,
