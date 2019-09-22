@@ -43,7 +43,6 @@ export default {
     },
     created(){
         menus().then(res=>{
-            console.log(res);
             this.leftList=res.data.data
             
         })
@@ -77,7 +76,6 @@ export default {
 <style lang="less" scoped >
 .myindex{
     height: 100%;
-    text-align: center;
     .el-header {
     background-color: #b3c0d1;
     color: #fff;
@@ -99,12 +97,12 @@ export default {
     background-color: #fff;
     color: #333;
     line-height: 200px;
+    text-align: center;
   }
   
   .el-main {
     background-color: #e9eef3;
     color: #333;
-    line-height: 160px;
   }
   .myi{
       margin-left:-50px;

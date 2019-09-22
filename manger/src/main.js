@@ -9,7 +9,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 // 路由
 import router from "./tooll/router.js"
-
+// 全局导入组件
+import bread from "./tooll/bread.vue"
+Vue.component("bread",bread)
 
 new Vue({
   router,
