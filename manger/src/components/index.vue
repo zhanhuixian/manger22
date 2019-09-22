@@ -25,6 +25,7 @@
         </el-aside>
         <!-- 中间部分 -->
         <el-main>
+          <router-view></router-view>
         </el-main>
       </el-container>
     </el-container>

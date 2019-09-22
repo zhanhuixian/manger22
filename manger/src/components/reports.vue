@@ -1,6 +1,6 @@
 <template>
   <div>
-      我是users
+      我是reports
   </div>
 </template>
 
